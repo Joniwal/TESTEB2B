@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TESTEB2B</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div><span class="tag">SHAREPOINT · MICROSOFT GRAPH</span><h1>TESTEB2B</h1><p>Um teste simples. Seus dados, na lista da empresa.</p></div><div class="account"><span id="account">Desconectado</span><button id="disconnect" hidden>Sair do aplicativo</button></div></header>
+<main>
+<div id="message" role="status" aria-live="polite" hidden></div>
+<details id="settings" open><summary>Conexão com o Microsoft 365</summary>
+<form id="connection"><div class="grid"><label>Endereço do site SharePoint<input name="site_url" type="url" placeholder="https://empresa.sharepoint.com/sites/Equipe" required></label><label>Nome da lista<input name="list_name" value="TESTEB2B" required></label><label>Tenant ID<input name="tenant_id" placeholder="Identificador do diretório fornecido pela TI" required></label><label>Client ID<input name="client_id" placeholder="Identificador do aplicativo fornecido pela TI" required></label></div><p class="hint">Use o endereço do site, sem /Lists/TESTEB2B. Você também pode preencher o arquivo .env ao lado do aplicativo.</p><button class="primary" type="submit">Conectar com minha conta Microsoft</button></form></details>
+<section><div class="section-head"><div><h2>Clientes</h2><span id="count" class="hint">Conecte para visualizar a lista</span></div><div class="actions"><button id="refresh" data-connected disabled>Atualizar</button><button id="new" class="primary" data-connected disabled>Novo registro</button></div></div><label class="search">Buscar na tabela<input id="search" type="search" placeholder="ID do cliente, nome ou data"></label><div class="table-wrap"><table><thead><tr><th>IDCLIENTE</th><th>NOME</th><th>DATA</th><th>Ações</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Conecte sua conta para carregar os registros.</td></tr></tbody></table></div></section>
+<footer>As alterações são gravadas diretamente na lista SharePoint.</footer>
+</main>
+<dialog id="editor"><form id="record"><div class="section-head"><h2 id="editor-title">Novo registro</h2><button type="button" id="close" aria-label="Fechar">×</button></div><label>IDCLIENTE<input name="IDCLIENTE" maxlength="255" required></label><label>NOME<input name="NOME" maxlength="255" required></label><label>DATA<input name="DATA" type="date" required></label><p id="editor-error" role="alert"></p><div class="actions"><button type="button" id="cancel">Cancelar</button><button class="primary" type="submit">Salvar registro</button></div></form></dialog>
+<script src="app.js"></script>
+</body></html>

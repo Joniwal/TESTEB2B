@@ -1,0 +1,5 @@
+msal[broker]>=1.39,<2
+requests>=2.32.5,<3
+pywebview>=6,<7
+python-dotenv>=1.1,<2
+pyinstaller>=6.16,<7
